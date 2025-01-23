@@ -1,0 +1,112 @@
+plugins {
+    alias(libs.plugins.android.application)
+
+}
+
+android {
+    namespace 'com.moviearena'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.moviearena"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    implementation libs.retrofit
+    implementation libs.converter.gson
+
+    //rxjava
+    implementation libs.adapter.rxjava2
+    implementation libs.rxjava
+
+    implementation libs.converter.gson
+
+    implementation libs.okhttp
+    implementation libs.logging.interceptor
+
+    implementation libs.gson
+
+    implementation libs.room.runtime
+    annotationProcessor libs.room.compiler
+    implementation libs.room.rxjava2
+
+    // ViewModel
+    implementation libs.lifecycle.viewmodel
+    // LiveData
+    implementation libs.lifecycle.livedata
+
+    implementation libs.glide
+    annotationProcessor libs.compiler
+
+    implementation libs.circleimageview
+
+    implementation libs.ccp
+
+    //progress bar
+    implementation libs.android.spinkit
+
+    //meow
+    implementation libs.kotlin.stdlib.jdk7
+    implementation libs.nafisbottomnav
+
+
+
+    //image slider
+    implementation libs.imageslideshow
+
+    annotationProcessor libs.lifecycle.compiler
+
+    implementation libs.dagger
+    annotationProcessor libs.dagger.compiler
+
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.legacy.support.v4
+
+    implementation libs.kotlinx.coroutines.android
+
+    implementation libs.core.ktx
+
+    implementation libs.rxandroid
+
+    implementation libs.material.v190
+
+    implementation libs.activity
+
+
+
+}

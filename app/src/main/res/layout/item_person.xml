@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingEnd="10dp"
+    android:layout_marginBottom="12dp"
+    android:layout_marginTop="12dp">
+
+    <!-- Circular Material Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/personCard"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:cardBackgroundColor="#313853"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/white"
+        app:cardCornerRadius="75dp"
+        android:elevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Image Inside Circular Card -->
+        <FrameLayout
+            android:id="@+id/personImageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/personImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/noimage"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/person_image"
+                android:clipToOutline="true" />
+
+            <!-- Image Overlay for Style -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black_translucent" />
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Name Beneath the Circular Card -->
+    <TextView
+        android:id="@+id/personName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Person Name"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintTop_toBottomOf="@id/personCard"
+        app:layout_constraintStart_toStartOf="@id/personCard"
+        app:layout_constraintEnd_toEndOf="@id/personCard" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

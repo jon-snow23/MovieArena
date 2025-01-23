@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+    android:background="#24293E">
+
+
+    <!-- Main Movie Information Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardBackgroundColor="#313853"
+        app:cardCornerRadius="8dp"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toTopOf="@id/mainLayout">
+
+        <ImageView
+            android:id="@+id/bigimg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/noimage"
+            android:contentDescription="Background Image"
+            android:alpha="0.3" />
+
+        <!-- Inner Layout for Movie Details -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Movie Title -->
+            <TextView
+                android:id="@+id/movie_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="8dp"
+                android:paddingEnd="16dp"
+                android:text="Movie Title"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="#F4F5FC"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Star Icon and Rating -->
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_baseline_star_outline_24"
+                app:layout_constraintStart_toStartOf="@id/movie_title"
+                app:layout_constraintTop_toBottomOf="@id/movie_title" />
+
+            <TextView
+                android:id="@+id/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="None"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/SecondColor"
+                app:layout_constraintStart_toEndOf="@id/star"
+                app:layout_constraintTop_toTopOf="@id/star"
+                app:layout_constraintBottom_toBottomOf="@id/star" />
+
+            <!-- Language Icon and Text -->
+            <ImageView
+                android:id="@+id/lang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_baseline_language_24"
+                app:layout_constraintStart_toStartOf="@id/movie_title"
+                app:layout_constraintTop_toBottomOf="@id/star" />
+
+            <TextView
+                android:id="@+id/language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="None"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/lang"
+                app:layout_constraintTop_toTopOf="@id/lang"
+                app:layout_constraintBottom_toBottomOf="@id/lang" />
+
+            <!-- Calendar Icon and Date -->
+            <ImageView
+                android:id="@+id/clndr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_outline_calendar_today_24"
+                app:layout_constraintStart_toStartOf="@id/movie_title"
+                app:layout_constraintTop_toBottomOf="@id/lang" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="None"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/clndr"
+                app:layout_constraintTop_toTopOf="@id/clndr"
+                app:layout_constraintBottom_toBottomOf="@id/clndr" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Poster Image Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card2"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        app:cardBackgroundColor="@color/SecondColor"
+        app:cardCornerRadius="8dp"
+        android:elevation="6dp"
+        app:layout_constraintStart_toStartOf="@id/card1"
+        app:layout_constraintBottom_toBottomOf="@id/card1"
+        android:layout_marginStart="16dp">
+
+        <ImageView
+            android:id="@+id/local_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/noimage"
+            android:scaleType="centerCrop" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Additional Action Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

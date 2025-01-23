@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="20dp">
+
+    <!-- Material Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#313853"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/white"
+        app:cardCornerRadius="8dp"
+        android:elevation="6dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Inner Content Layout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp">
+
+            <!-- Movie Image -->
+            <ImageView
+                android:id="@+id/image_movie"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:src="@drawable/noimage"
+                android:scaleType="centerCrop"
+                android:contentDescription="Movie Name"
+                android:clipToOutline="true"
+                tools:ignore="MissingConstraints" />
+
+            <!-- Movie Title -->
+            <TextView
+                android:id="@+id/movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/white"
+                android:text="Movie Title\nSubtitle"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toBottomOf="@id/image_movie" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Additional Layout -->
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/mainLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/card"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:padding="8dp">-->
+
+        <!-- Example Button in Hidden Layout -->
+<!--        <Button-->
+<!--            android:id="@+id/action_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Action"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:backgroundTint="@color/SecondColor"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
