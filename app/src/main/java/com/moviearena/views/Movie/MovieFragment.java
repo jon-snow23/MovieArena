@@ -31,7 +31,6 @@ import com.moviearena.adapters.RecyclerCrewAdapter;
 import com.moviearena.adapters.RecyclerMovieAdapter;
 import com.moviearena.adapters.RecyclerMovieImagesAdapter;
 import com.moviearena.adapters.RecyclerTrailersAdapter;
-import com.moviearena.database.MyRoomDatabase;
 import com.moviearena.databinding.FragmentMovieBinding;
 import com.moviearena.models.MovieDetailsModel;
 import com.moviearena.models.MovieImagesModel;
@@ -63,7 +62,6 @@ public class MovieFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_movie, container, false);
     }
 
